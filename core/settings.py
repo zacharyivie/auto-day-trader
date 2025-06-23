@@ -11,10 +11,28 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+import environ
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+
+# Initialize environment variables
+env = environ.Env(
+    INFERENCING_ENDPOINT=(str, ""),
+    INFERENCING_API_KEY=(str, ""),
+    EMBEDDING_ENDPOINT=(str, ""),
+    EMBEDDING_API_KEY=(str, ""),
+)
+
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
+
+INFERENCING_ENDPOINT = env('INFERENCING_ENDPOINT')
+INFERENCING_API_KEY = env('INFERENCING_API_KEY')
+EMBEDDING_ENDPOINT = env('EMBEDDING_ENDPOINT')
+EMBEDDING_API_KEY = env('EMBEDDING_API_KEY')
+EMBEDDING_MODEL="text-embedding-3-small"
+INFERENCING_MODEL="gpt-4.1-nano"
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
@@ -26,6 +44,7 @@ SECRET_KEY = "django-insecure-85de%3y9y#dum$(hv(h6(h_xvfm1sz-2p5-pj8+-12)b5jiibp
 DEBUG = True
 
 ALLOWED_HOSTS = []
+
 
 
 # Application definition
