@@ -1,3 +1,2 @@
-django
-psycopg2-binary
-gunicorn
+requests>=2.32.4
+PySide6>=6.9.1
