@@ -50,16 +50,4 @@ class Generator:
         response = requests.post(url=self.endpoint, headers=self.headers, json=payload)
         response.raise_for_status()
         return response.json()
-
-
-if __name__ == "__main__":
-    generator = Generator()
-    messages: List[Message | dict] = [
-        {
-            "role": "user",
-            "content": "Hello, how are you?"
-        }
-    ]
-    model: str = "gpt-4.1-nano"
-    response = generator.generate(messages, model)
     
