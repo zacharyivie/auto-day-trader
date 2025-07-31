@@ -1,5 +1,5 @@
-from inferencing import Generator
-from PySide6.QtWidgets import QMainWindow, QVBoxLayout
+from inferencing.generator import Generator
+from PySide6.QtWidgets import QMainWindow
 from gui.menu_bar import MenuBar
 from gui.page_manager import PageManager
 
@@ -8,7 +8,7 @@ class MainWindow(QMainWindow):
         super().__init__()
         self.setWindowTitle("Auto Day Trader")
         self.setFixedSize(800, 600)
-        self.generator = Generator()
+        self.generator: Generator = Generator()
         self.setMenuBar(MenuBar())
         self.setCentralWidget(PageManager())
         

@@ -1,8 +1,9 @@
 from PySide6.QtWidgets import QMenuBar
-from gui.menus import ExportMenu, SettingsMenu
+from gui.menus.export_menu import ExportMenu
+from gui.menus.settings_menu import SettingsMenu
 
 class MenuBar(QMenuBar):
     def __init__(self):
         super().__init__()
-        self.addMenu(ExportMenu())
-        self.addMenu(SettingsMenu())
+        _ = self.addMenu(ExportMenu())
+        _ = self.addMenu(SettingsMenu())
