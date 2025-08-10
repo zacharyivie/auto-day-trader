@@ -1,0 +1,6 @@
+// Exclude the packages that detonate my type checking
+{
+    "exclude": [
+        "venv/Lib/site-packages/dearpygui"
+    ]
+}
