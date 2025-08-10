@@ -1,4 +1,4 @@
-from gui import run_app
+from frontend import run_app
 from dotenv import load_dotenv
 from services import UserService, setup_logging, AuthService, SessionService
 

@@ -1,6 +1,6 @@
 import dearpygui.dearpygui as dpg
-from gui.core.routing import navigate
-from gui.pages import register_pages
+from .core.routing import navigate
+from .pages import register_pages
 
 def run_app():
     dpg.create_context()
