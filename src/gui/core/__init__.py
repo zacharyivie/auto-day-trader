@@ -1,0 +1,1 @@
+from .tags import WINDOW_TAGS
